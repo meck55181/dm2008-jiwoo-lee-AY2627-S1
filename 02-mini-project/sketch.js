@@ -21,6 +21,13 @@ let score = 0;
 let spawnCounter = 0;
 let button;
 
+let penImg;
+
+let bgImg;
+
+let mySound;
+let musicStarted = false;
+
 const SPAWN_RATE = 90;
 const PIPE_SPEED = 2.5;
 const PIPE_GAP = 200;
@@ -30,21 +37,28 @@ const PIPE_W = 60;
 let gameState = "playing";
 
 /* ----------------- Setup & Draw ----------------- */
-function setup() { 
+
+async function setup() {
+  penImg = await loadImage('assets/pen.png');
+  bgImg = await loadImage('assets/bg.png');
+  
+  mySound = await loadSound('./assets/bgm.mp3');
+  
   createCanvas(480, 500);
   noStroke();
   bird = new Bird(120, height / 2 - 100);
   pipes.push(new Pipe(width + 40));
 
-    //button
+  //button
   button = createButton('RESTART');
-  button.position(width/2 - 20, height/2 + 80);
+  button.position(width / 2 - button.width/2 , height / 2 + 32);
   button.mousePressed(restart);
   button.style("display", "none");
 }
 
 function draw() {
-  background(18, 22, 28);
+  //background(30, 120, 180);
+  image(bgImg, 0, 0);
 
   if (gameState === "playing") {
     bird.update();
@@ -63,6 +77,8 @@ function draw() {
       // When the bird hits a pipe, trigger game over
       if (pipes[i].hits(bird)) {
         gameState = "gameover"
+        mySound.stop();
+        musicStarted = false;
       }
 
       // When the bird passes a pipe, increment the score
@@ -81,7 +97,10 @@ function draw() {
     bird.show();
 
     // Display the score — look up textAlign() and textSize() in the p5.js reference
-    text(score, 10, 20) 
+    textSize(16);
+    textAlign(LEFT);
+    fill(255);
+    text('score: ' + score, 10, 20);
   }
 
   if (gameState === "gameover") {
@@ -95,25 +114,52 @@ function draw() {
 function keyPressed() {
   if (key === ' ' || key === UP_ARROW) {
     bird.flap();
+
+    if(!musicStarted) {
+      mySound.loop(true);
+      mySound.play();
+      musicStarted = true;
+    }
   }
 }
 
 function displayGameOverScreen() {
+  // dark transparent overlay
+  fill(0, 0, 0, 150);
+  rect(0, 0, width, height);
+
+  // game over panel
+  fill(0, 0, 0, 180);
+  rect(width / 2 - 140, height / 2 - 100, 280, 180, 15);
+  
+  // GAME OVER
   fill(255);
   textAlign(CENTER);
   textSize(32);
-  text('GAMEOVER', width/2, height/2);
-  text(score, width/2, height/2 + 40);
+  textStyle(BOLD);
+  text('GAME OVER!', width / 2, height / 2 - 40);
+
+  // SCORE
+  textSize(20);
+  textStyle(NORMAL);
+  text('SCORE : ' + score, width / 2, height / 2 + 10);
+
   button.style("display", "block");
 }
 
 function restart() {
   bird.pos = createVector(120, height / 2 - 100);
+
+  bird.vel = createVector(0, 0);
+  bird.acc = createVector(0, 0);
+  
   pipes = [];
   pipes.push(new Pipe(width + 40));
+  
   score = 0;
   spawnCounter = 0;
   gameState = "playing";
+  
   button.style("display", "none");
 }
 
@@ -154,14 +200,19 @@ class Bird {
       this.pos.y = height - this.r;
       this.vel.y = 0;
       gameState = "gameover";
+
+      mySound.stop();
+      musicStarted = false;
     }
   }
 
   show() {
-    fill(255, 205, 80);
-    circle(this.pos.x, this.pos.y, this.r * 2);
-    fill(40);
-    circle(this.pos.x + 6, this.pos.y - 4, 4);
+    // fill(255, 205, 80);
+    // circle(this.pos.x, this.pos.y, this.r * 2);
+    // fill(40);
+    // circle(this.pos.x + 6, this.pos.y - 4, 4);
+    imageMode(CENTER);
+    image(penImg, this.pos.x, this.pos.y, 70 ,70);
   }
 }
 
@@ -184,6 +235,9 @@ class Pipe {
   }
 
   show() {
+    // fill(255);
+    // image(pipeImg, this.x, 0, this.w, this.top);
+    // image(pipeImg, this.x, this.bottom, this.w, height - this.bottom);
     fill(120, 200, 160);
     rect(this.x, 0, this.w, this.top);
     rect(this.x, this.bottom, this.w, height - this.bottom);
