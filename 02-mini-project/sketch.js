@@ -1,11 +1,6 @@
 // DM2008 — Mini Project
 // The Flying Penguin
 
-// Complete this scaffold into a playable game.
-// Your game should have player control, collision detection,
-// score tracking, and at least two game states.
-
-
 /* ----------------- Globals ----------------- */
 let bird;
 let pipes = [];
@@ -15,8 +10,6 @@ let button;
 
 let penImg;
 let bgImg;
-
-let gameFont;
 
 let mySound;
 let musicStarted = false;
@@ -34,10 +27,6 @@ async function setup() {
   penImg = await loadImage('assets/pen.png');
   bgImg = await loadImage('assets/bg.png');
   mySound = await loadSound('assets/bgm.mp3');
-
-  gameFont = await loadFont('assets/font.ttf');
-
-  textFont(gameFont);
   
   createCanvas(500, 500);
   noStroke();
@@ -57,7 +46,6 @@ function draw() {
   if (gameState === "playing") {
     bird.update();
 
-    // Spawn a new pipe every SPAWN_RATE frames, then reset the counter
     spawnCounter++;
     if (spawnCounter >= SPAWN_RATE) {
       pipes.push(new Pipe(width + 40));
@@ -68,7 +56,6 @@ function draw() {
       pipes[i].update();
       pipes[i].show();
 
-      // When the bird hits a pipe, trigger game over
       if (pipes[i].hits(bird)) {
         gameState = "gameover"
         mySound.stop();
@@ -87,7 +74,6 @@ function draw() {
 
     bird.show();
 
-    // Display the score — look up textAlign() and textSize() in the p5.js reference
     textSize(16);
     textAlign(LEFT);
     fill(255);

@@ -16,12 +16,9 @@ I implemented the core gameplay logic, including player controls, pipe creation,
 ### Output
 
 ![screenshot](readme-assets/screenshot-01.png)
+![screenshot](readme-assets/screenshot-02.png)
 
-<!-- Drop a screenshot or GIF of your finished project.
-     Save it to a readme-assets/ folder inside this project folder.
-     Got more than one good screenshot? Add them. -->
-
-[Watch Online](https://your-link-here)
+[Watch Online](https://youtube.com/shorts/CB1UOEvssjA?feature=share)
 
 <!-- Replace the link above with a URL to a screen recording or video of your project.
      ⚠️ Make sure the file or page is set to public before submitting. -->
@@ -57,10 +54,7 @@ If I had more time, I would add more detailed feedback such as sound effects, an
 - `sketch.js`: main game loop, game states, scoring, and restart behavior
 - `bird.js` — contains the `Bird` class
 - `pipe.js` — contains the `Pipe` class
-- `assets/` — contains the penguin image, background image, and background music
-
-### 🧩 Something I'm Proud Of
-
+- `assets/` — contains the penguin image(ChatGPT Image Generation (OpenAI)), background image(ChatGPT Image Generation (OpenAI)), and background music(free music: https://www.youtube.com/watch?v=llRnaujvtAk&t=1s)
 
 ### 🔗 References
 - BBC Flying Penguins: https://www.youtube.com/watch?v=9dfWzp7rYR4
