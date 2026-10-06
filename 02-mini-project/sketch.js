@@ -44,7 +44,7 @@ async function setup() {
   
   mySound = await loadSound('./assets/bgm.mp3');
   
-  createCanvas(480, 500);
+  createCanvas(500, 500);
   noStroke();
   bird = new Bird(120, height / 2 - 100);
   pipes.push(new Pipe(width + 40));
@@ -164,99 +164,3 @@ function restart() {
 }
 
 /* ----------------- Classes ----------------- */
-class Bird {
-  constructor(x, y) {
-    this.pos = createVector(x, y);
-    this.vel = createVector(0, 0);
-    this.acc = createVector(0, 0);
-    this.r = 16;
-    this.gravity = 0.45;
-    this.flapStrength = -8.0;
-  }
-
-  applyForce(fy) {
-    this.acc.y += fy;
-  }
-
-  flap() {
-    // A negative y velocity moves the bird upward
-    this.vel.y = this.flapStrength;
-  }
-
-  update() {
-    this.applyForce(this.gravity);
-    this.vel.add(this.acc);
-    this.pos.add(this.vel);
-    this.acc.mult(0);
-
-    // Keep the bird within the canvas vertically
-    if (this.pos.y < this.r) {
-      this.pos.y = this.r;
-      this.vel.y = 0;
-    }
-
-    // Touching the ground is game over — same as hitting a pipe
-    if (this.pos.y > height - this.r) {
-      this.pos.y = height - this.r;
-      this.vel.y = 0;
-      gameState = "gameover";
-
-      mySound.stop();
-      musicStarted = false;
-    }
-  }
-
-  show() {
-    // fill(255, 205, 80);
-    // circle(this.pos.x, this.pos.y, this.r * 2);
-    // fill(40);
-    // circle(this.pos.x + 6, this.pos.y - 4, 4);
-    imageMode(CENTER);
-    image(penImg, this.pos.x, this.pos.y, 70 ,70);
-  }
-}
-
-class Pipe {
-  constructor(x) {
-    this.x = x;
-    this.w = PIPE_W;
-    this.speed = PIPE_SPEED;
-
-    const margin = 40;
-    const gapY = random(margin, height - margin - PIPE_GAP);
-    this.top = gapY;
-    this.bottom = gapY + PIPE_GAP;
-
-    this.passed = false;
-  }
-
-  update() {
-    this.x -= this.speed;
-  }
-
-  show() {
-    // fill(255);
-    // image(pipeImg, this.x, 0, this.w, this.top);
-    // image(pipeImg, this.x, this.bottom, this.w, height - this.bottom);
-    fill(120, 200, 160);
-    rect(this.x, 0, this.w, this.top);
-    rect(this.x, this.bottom, this.w, height - this.bottom);
-  }
-
-  offscreen() {
-    // 'return' sends a value back to wherever this method was called
-    // We'll cover this properly next week, for now just know it gives back true or false
-    return this.x + this.w < 0;
-  }
-
-  // Checks if the bird overlaps with either pipe rectangle
-  // 1) Is the bird within the pipe's x range?
-  // 2) If yes, is it outside the gap — above the top or below the bottom?
-  hits(bird) {
-    // This method also uses 'return' — coming up next week!
-    const withinX = (bird.pos.x + bird.r > this.x) && (bird.pos.x - bird.r < this.x + this.w);
-    const aboveGap = bird.pos.y - bird.r < this.top;
-    const belowGap = bird.pos.y + bird.r > this.bottom;
-    return withinX && (aboveGap || belowGap);
-  }
-}
