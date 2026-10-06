@@ -13,7 +13,6 @@ class Bird {
   }
 
   flap() {
-    // A negative y velocity moves the bird upward
     this.vel.y = this.flapStrength;
   }
 
@@ -23,13 +22,12 @@ class Bird {
     this.pos.add(this.vel);
     this.acc.mult(0);
 
-    // Keep the bird within the canvas vertically
     if (this.pos.y < this.r) {
       this.pos.y = this.r;
       this.vel.y = 0;
     }
 
-    // Touching the ground is game over — same as hitting a pipe
+    // touch the ground
     if (this.pos.y > height - this.r) {
       this.pos.y = height - this.r;
       this.vel.y = 0;

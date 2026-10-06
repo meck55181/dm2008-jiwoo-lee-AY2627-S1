@@ -26,16 +26,10 @@ class Pipe {
   }
 
   offscreen() {
-    // 'return' sends a value back to wherever this method was called
-    // We'll cover this properly next week, for now just know it gives back true or false
     return this.x + this.w < 0;
   }
 
-  // Checks if the bird overlaps with either pipe rectangle
-  // 1) Is the bird within the pipe's x range?
-  // 2) If yes, is it outside the gap — above the top or below the bottom?
   hits(bird) {
-    // This method also uses 'return' — coming up next week!
     const withinX = (bird.pos.x + bird.r > this.x) && (bird.pos.x - bird.r < this.x + this.w);
     const aboveGap = bird.pos.y - bird.r < this.top;
     const belowGap = bird.pos.y + bird.r > this.bottom;

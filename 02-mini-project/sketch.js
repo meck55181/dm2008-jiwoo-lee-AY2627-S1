@@ -1,18 +1,10 @@
 // DM2008 — Mini Project
-// FLAPPY BIRD (Starter Scaffold)
-//
+// The Flying Penguin
+
 // Complete this scaffold into a playable game.
 // Your game should have player control, collision detection,
 // score tracking, and at least two game states.
-//
-// Not sure where to start? Try this order:
-// 1. Get the bird flapping — add control in keyPressed()
-// 2. Get pipes spawning — uncomment the spawn logic in draw()
-// 3. Add collision detection between the bird and pipes
-// 4. Add scoring when the bird passes a pipe
-// 5. Add game states — at minimum a playing state and a game over state
-//
-// Stretch: add a start screen, a high score, or a difficulty curve.
+
 
 /* ----------------- Globals ----------------- */
 let bird;
@@ -24,7 +16,7 @@ let button;
 let penImg;
 let bgImg;
 
-//let gameFont;
+let gameFont;
 
 let mySound;
 let musicStarted = false;
@@ -34,7 +26,6 @@ const PIPE_SPEED = 2.5;
 const PIPE_GAP = 200;
 const PIPE_W = 60;
 
-// Game states: "playing" or "gameover" — add more if you need them
 let gameState = "playing";
 
 /* ----------------- Setup & Draw ----------------- */
@@ -42,11 +33,11 @@ let gameState = "playing";
 async function setup() {
   penImg = await loadImage('assets/pen.png');
   bgImg = await loadImage('assets/bg.png');
-  
   mySound = await loadSound('assets/bgm.mp3');
-  //gameFont = await loadFont('assets/font.ttf');
 
-  textFont('Courier New');
+  gameFont = await loadFont('assets/font.ttf');
+
+  textFont(gameFont);
   
   createCanvas(500, 500);
   noStroke();
@@ -84,10 +75,7 @@ function draw() {
         musicStarted = false;
       }
 
-      // When the bird passes a pipe, increment the score
-      // Hint: use pipes[i].passed to make sure you only score once per pipe
       if (!pipes[i].passed && pipes[i].x + pipes[i].w < bird.pos.x) {
-        // increment score here
         score += 1;
         pipes[i].passed = true;
       }
@@ -107,8 +95,6 @@ function draw() {
   }
 
   if (gameState === "gameover") {
-    // What should the player see when the game ends?
-    // How do they restart?
     displayGameOverScreen();
   }
 }
@@ -131,9 +117,9 @@ function displayGameOverScreen() {
   fill(0, 0, 0, 150);
   rect(0, 0, width, height);
 
-  // game over panel
+  // game over overlay
   fill(0, 0, 0, 180);
-  rect(width / 2 - 140, height / 2 - 100, 280, 180, 15);
+  rect(width / 2 - 140, height / 2 - 100, 280, 180, 8);
   
   // GAME OVER
   fill(255);
@@ -143,9 +129,9 @@ function displayGameOverScreen() {
   text('GAME OVER!', width / 2, height / 2 - 40);
 
   // SCORE
-  textSize(20);
+  textSize(16);
   textStyle(NORMAL);
-  text('SCORE : ' + score, width / 2, height / 2 + 10);
+  text('SCORE : ' + score, width / 2, height / 2);
 
   button.style("display", "block");
 }
