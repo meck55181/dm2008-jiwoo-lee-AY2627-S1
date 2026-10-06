@@ -36,7 +36,7 @@ Starting from the provided scaffold, I completed the main gameplay logic by impl
 
 For the aesthetic direction, I replaced the original bird with a custom penguin image and added a new background to establish the world of the game. I also added background music that begins when the player first moves and stops when the game ends.
 
-One challenge was making the different game states work together reliably, especially resetting the character's position, velocity, obstacles, score, and music after game over. 
+One challenge I encountered was displaying the background image correctly. The background kept appearing as only one-quarter of the full image, and it took me some time to figure out why. I eventually realized that imageMode(CENTER) used for the penguin was also affecting the background image. I solved the problem by using push() and pop() around the penguin's imageMode(CENTER), so that the setting only applies to the penguin image.
 
 If I had more time, I would add more detailed feedback such as sound effects, animated obstacles, particles, and different stages as the penguin flies further.
 

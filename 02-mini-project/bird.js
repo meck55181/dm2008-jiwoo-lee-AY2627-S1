@@ -41,11 +41,9 @@ class Bird {
   }
 
   show() {
-    // fill(255, 205, 80);
-    // circle(this.pos.x, this.pos.y, this.r * 2);
-    // fill(40);
-    // circle(this.pos.x + 6, this.pos.y - 4, 4);
+    push();
     imageMode(CENTER);
-    image(penImg, this.pos.x, this.pos.y, 70 ,70);
+    image(penImg, this.pos.x, this.pos.y, 100 ,100);
+    pop();
   }
 }

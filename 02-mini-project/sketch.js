@@ -22,8 +22,9 @@ let spawnCounter = 0;
 let button;
 
 let penImg;
-
 let bgImg;
+
+//let gameFont;
 
 let mySound;
 let musicStarted = false;
@@ -42,7 +43,10 @@ async function setup() {
   penImg = await loadImage('assets/pen.png');
   bgImg = await loadImage('assets/bg.png');
   
-  mySound = await loadSound('./assets/bgm.mp3');
+  mySound = await loadSound('assets/bgm.mp3');
+  //gameFont = await loadFont('assets/font.ttf');
+
+  textFont('Courier New');
   
   createCanvas(500, 500);
   noStroke();
@@ -57,8 +61,7 @@ async function setup() {
 }
 
 function draw() {
-  //background(30, 120, 180);
-  image(bgImg, 0, 0);
+  image(bgImg, 0, 0, width, height);
 
   if (gameState === "playing") {
     bird.update();
@@ -162,5 +165,3 @@ function restart() {
   
   button.style("display", "none");
 }
-
-/* ----------------- Classes ----------------- */

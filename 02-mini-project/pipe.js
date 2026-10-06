@@ -17,12 +17,12 @@ class Pipe {
   }
 
   show() {
-    // fill(255);
-    // image(pipeImg, this.x, 0, this.w, this.top);
-    // image(pipeImg, this.x, this.bottom, this.w, height - this.bottom);
-    fill(120, 200, 160);
+    push();
+    fill("#BCE9FF");
+    stroke("#5392DE");
     rect(this.x, 0, this.w, this.top);
     rect(this.x, this.bottom, this.w, height - this.bottom);
+    pop();
   }
 
   offscreen() {
