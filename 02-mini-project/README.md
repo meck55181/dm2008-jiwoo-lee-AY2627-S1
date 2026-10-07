@@ -20,9 +20,6 @@ I implemented the core gameplay logic, including player controls, pipe creation,
 
 [Watch Online](https://youtube.com/shorts/CB1UOEvssjA?feature=share)
 
-<!-- Replace the link above with a URL to a screen recording or video of your project.
-     ⚠️ Make sure the file or page is set to public before submitting. -->
-
 ---
 
 ### ✍️ Reflection
@@ -52,10 +49,9 @@ If I had more time, I would add more detailed feedback such as sound effects, an
 
 ### 🔍 Code Structure
 - `sketch.js`: main game loop, game states, scoring, and restart behavior
-- `bird.js` — contains the `Bird` class
-- `pipe.js` — contains the `Pipe` class
-- `assets/` — contains the penguin image(ChatGPT Image Generation (OpenAI)), background image(ChatGPT Image Generation (OpenAI)), and background music(free music: https://www.youtube.com/watch?v=llRnaujvtAk&t=1s)
+- `bird.js`: contains the `Bird` class
+- `pipe.js`: contains the `Pipe` class
+- `assets/`: contains the penguin image(ChatGPT Image Generation (OpenAI)), background image(ChatGPT Image Generation (OpenAI)), and background music(free music: https://www.youtube.com/watch?v=llRnaujvtAk&t=1s)
 
 ### 🔗 References
 - BBC Flying Penguins: https://www.youtube.com/watch?v=9dfWzp7rYR4
-- 
