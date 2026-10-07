@@ -1,8 +1,4 @@
-# Week ## — Topic Name
-
-<!-- Replace ## with the week number and Topic Name with the week's focus -->
-<!-- You may also refer to each week's slide for the Topic Name -->
-<!-- e.g. Week 03 — Arrays & Functions -->
+# Week 02 — Conditionals & Loops
 
 ---
 
@@ -10,50 +6,20 @@
 
 | Activity | What I Made                   |
 | -------- | ----------------------------- |
-| `1a`     | <!-- one line description --> |
-| `1b`     | <!-- one line description --> |
-
-<!-- Add or remove rows to match the activities for this week. -->
+| `2a`     | Experimented with conditionals and movement to create overlapping geometric trails that change when clicking the sketch. |
+| `2b`     | Used loops, modulo, and mouse interaction to create a repeating pattern inspired by musical notes and staff lines. |
 
 ---
 
 ### This Week
 
-<!-- A short, informal summary of what you explored across the week's activities. What did you make? What clicked? What didn't?
-     A few sentences is all you need — write it like a journal entry, not a report. -->
+I explored conditionals and loops in p5.js. I learned how if and else can make the program respond to different conditions, while for loops make it easier to repeat shapes and create patterns. I also experimented with modulo to create alternating patterns.
 
 ---
 
 ### Output
 
-![screenshot](readme-assets/output.png)
-
-<!-- Drop a screenshot, photo, or GIF of something you made this week.
-     Save it to a readme-assets/ folder inside this week's folder.
-     Made more than one thing worth showing? Add more images. -->
+![screenshot](readme-assets/activity-2a.png)
+![screenshot](readme-assets/activity-2b.png)
 
 ---
-
-<!-- ─────────────────────────────────────────────────────
-     GOING FURTHER — if you want to document more, here are some ideas:
-
-     ### 1a — Activity Name
-     ![screenshot](readme-assets/activity-1a.png)
-     What you tried, what you discovered.
-
-     ### 1b — Activity Name
-     ![screenshot](readme-assets/activity-1b.png)
-     What you tried, what you discovered.
-
-     ### 🧩 Something I Found Interesting
-     A line of code, a technique, a happy accident — paste it here.
-     ```js
-     // your code here
-     ```
-
-     ### ❓ Questions I'm Sitting With
-     Anything unresolved, something you want to revisit, or a rabbit hole you fell into.
-
-     ### 🔗 References
-     Links to anything that helped or inspired you this week.
-     ───────────────────────────────────────────────────── -->

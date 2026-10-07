@@ -1,8 +1,4 @@
-# Week ## — Topic Name
-
-<!-- Replace ## with the week number and Topic Name with the week's focus -->
-<!-- You may also refer to each week's slide for the Topic Name -->
-<!-- e.g. Week 03 — Arrays & Functions -->
+# Week 04 — Blueprints & Objects
 
 ---
 
@@ -10,50 +6,20 @@
 
 | Activity | What I Made                   |
 | -------- | ----------------------------- |
-| `1a`     | <!-- one line description --> |
-| `1b`     | <!-- one line description --> |
-
-<!-- Add or remove rows to match the activities for this week. -->
+| `4a`     | Practiced classes and objects by creating a cookie with properties and methods for changing its position and flavor. |
+| `4b`     | Created multiple moving objects with a class and experimented with changing their size, color, and bouncing behavior over time. |
 
 ---
 
 ### This Week
 
-<!-- A short, informal summary of what you explored across the week's activities. What did you make? What clicked? What didn't?
-     A few sentences is all you need — write it like a journal entry, not a report. -->
+This week, I learned how classes and objects can make my code more organized and reusable. I explored how constructor() defines an object’s properties and how methods control its behavior. I also practiced creating multiple objects from the same class using arrays.
 
 ---
 
 ### Output
 
-![screenshot](readme-assets/output.png)
-
-<!-- Drop a screenshot, photo, or GIF of something you made this week.
-     Save it to a readme-assets/ folder inside this week's folder.
-     Made more than one thing worth showing? Add more images. -->
+![screenshot](readme-assets/activity-4a.png)
+![screenshot](readme-assets/activity-4b.png)
 
 ---
-
-<!-- ─────────────────────────────────────────────────────
-     GOING FURTHER — if you want to document more, here are some ideas:
-
-     ### 1a — Activity Name
-     ![screenshot](readme-assets/activity-1a.png)
-     What you tried, what you discovered.
-
-     ### 1b — Activity Name
-     ![screenshot](readme-assets/activity-1b.png)
-     What you tried, what you discovered.
-
-     ### 🧩 Something I Found Interesting
-     A line of code, a technique, a happy accident — paste it here.
-     ```js
-     // your code here
-     ```
-
-     ### ❓ Questions I'm Sitting With
-     Anything unresolved, something you want to revisit, or a rabbit hole you fell into.
-
-     ### 🔗 References
-     Links to anything that helped or inspired you this week.
-     ───────────────────────────────────────────────────── -->
