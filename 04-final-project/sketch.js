@@ -4,7 +4,7 @@ let connectBtn;
 let wasOpened = false;
 
 // Sensor and Animation
-let sensorVal = 0;
+let sensorVal = 0; // Initialize the force sensor value.
 let circleSize = 50;
 let targetSize = 50;
 
@@ -23,7 +23,7 @@ const DOT_TIME = 300;
 const LETTER_GAP = 800; // ?ntc: pause for one letter input
 
 
-// Morse Code
+// Custom Morse-to-letter mapping
 const morseCode = {
   ".---": "E",
   "--.-": "T",
@@ -105,6 +105,9 @@ function draw() {
         if ([val, left, right, up, down].every(Number.isFinite)) {
           sensorVal = val;
 
+          // [AI-assisted] Convert each completed press into a dot or dash.
+          // Asked AI how to convert each completed press into a dot or dash. 
+          // It suggested the following code, which I added here.
           if (!isPressed && val >= PRESS_THRESHOLD) {
             setPressed(true);
           } else if (isPressed && val <= RELEASE_THRESHOLD) {
@@ -145,6 +148,9 @@ function draw() {
 
   ellipse(width * 0.25, height / 2, circleSize);
 
+  // [AI-assisted] Decode after a pause and write to the selected cell.
+  // Asked AI how to decode morse code after a pause and write to the selected cell. 
+  // It suggested the following function call, which I added here.
   decodeMorse();
 
   fill(200, 61, 50);
@@ -258,7 +264,7 @@ function keyPressed() {
   }
 
   if (key === "r" || key === "R") {
-    resetGrid();
+    resetGrid(); // Clear all letters and reset the cursor and input.
     return false;
   }
 }
@@ -322,6 +328,6 @@ function updateConnectBtn() {
     connectBtn.addClass("connected");
   } else {
     connectBtn.removeClass("connected");
-    if (isPressed) setPressed(false);
+    if (isPressed) setPressed(false); // Added press-state release on disconnection.
   }
 }
