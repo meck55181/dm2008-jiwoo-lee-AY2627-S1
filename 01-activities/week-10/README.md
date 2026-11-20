@@ -18,9 +18,9 @@ I explored how to create interactive interfaces using p5.js. I learned to use cr
 
 ### Output
 
-![screenshot](readme-assets/activity-10-1.png)
-![screenshot](readme-assets/activity-10-2.png)
-![screenshot](readme-assets/activity-10-3.png)
-![screenshot](readme-assets/activity-10-video.png)
+![screenshot](readme-assets/activity-10-photo1.jpg)
+![screenshot](readme-assets/activity-10-photo2.jpg)
+![screenshot](readme-assets/activity-10-photo3.jpg)
+![video](readme-assets/activity-10-video.mp4)
 
 ---
