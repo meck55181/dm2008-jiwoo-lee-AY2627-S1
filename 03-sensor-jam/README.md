@@ -1,54 +1,30 @@
-# Sensor Jam — Title
-
-<!-- Replace "Title" with the name of your project, e.g. "Sensor Jam — Theremin Visualiser" -->
+# Sensor Jam — Warning Shaker
 
 ---
 
 ### The Project
 
-<!-- What does your sketch do, and what physical input drives it?
-     How does the sensor data translate into something on screen?
-     A few sentences is all you need. -->
+Warning Shaker turns distance sensor readings from an Arduino into a visual warning using p5.js. As an object moves closer to the sensor, the circle grows larger, becomes brighter red, and shakes more intensely. As the object moves away, the circle becomes smaller and darker.
 
 ---
 
-### Output
+### Screenshots
+![setup](documentation/sensor-jam-photo.jpg)
 
-![screenshot](readme-assets/screenshot-01.png)
+### Demo Video
 
-<!-- Drop a screenshot or GIF of your sketch in action.
-     Got a photo of your physical setup too? Throw it in.
-     Save everything to a readme-assets/ folder inside this project folder. -->
-
-[Watch Online](https://your-link-here)
-
-<!-- Replace the link above with a URL to a video of your project in action.
-     ⚠️ Make sure the file or page is set to public before submitting. -->
+![Screenshot1] (documentation/sensor-jam-video-changing-color.mp4)
+![Screenshot2] (documentation/sensor-jam-video-shaking.mp4)
+![Watch Online](https://youtu.be/Z3AU_Gnlyic)
 
 ---
 
-<!-- ─────────────────────────────────────────────────────
-     GOING FURTHER — want to document more? Try any of these:
 
-     ### ✍️ Reflection
-     A short write-up of your process — what worked, what didn't,
-     and what you'd take further if you had more time.
+### 🧩 Something I Found Interesting
 
-     ### 🛠️ Hardware
-     List the physical components you used.
-     - Arduino Uno
-     - Ultrasonic sensor (HC-SR04)
+Generating random position offsets every frame creates the shaking effect.
+     // let xOffset = random(-shakeAmount, shakeAmount);
+     // let yOffset = random(-shakeAmount, shakeAmount);
 
-     ### 🔍 Sensor Mapping
-     How does your sensor data map to visual or sonic output?
-     e.g. "Distance (0–400cm) → circle size (10–400px) using map()"
-
-     ### 🧩 Something I Found Interesting
-     A snippet, a technique, a happy accident.
-     ```js
-     // your code here
-     ```
-
-     ### 🔗 References
-     Anything that helped — tutorials, datasheets, examples.
-     ───────────────────────────────────────────────────── -->
+### 🔗 References
+Shaking Object Code - p5js (https://editor.p5js.org/luisa_NYU/sketches/QEM1tnYXE)
