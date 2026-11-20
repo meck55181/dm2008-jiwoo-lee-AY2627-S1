@@ -1,4 +1,4 @@
-# Week 03 — Arrays & Functions
+# Week 09 — Sensor to Screen
 
 ---
 
@@ -6,20 +6,21 @@
 
 | Activity | What I Made                   |
 | -------- | ----------------------------- |
-| `3a`     | Experimented with arrays by adding and removing colors through mouse and keyboard interactions. |
-| `3b`     | Practiced creating reusable functions with parameters and used transformations like translate() and rotate() to animate shapes. |
+| `9a`     | 	Used map() to control LED brightness with ultrasonic distance readings and explored sending sensor data from Arduino to p5.js over serial communication. |
 
 ---
 
 ### This Week
 
-I learned how to organize my code using arrays and functions. I also explored transformations like translate(), rotate(), and scale() to move and change shapes more easily. Using push() and pop() helped me understand how to apply transformations without affecting everything else on the canvas.
+I learned how to connect physical inputs to digital outputs using Arduino and p5.js. I used map() to translate ultrasonic sensor readings into LED brightness and explored serial communication for screen-based interactions. I also tested my setup and refined the code and wiring to make the output more responsive and smooth.
 
 ---
 
-### Output
+### Documentation
 
-![screenshot](readme-assets/activity-3a.png)
-![screenshot](readme-assets/activity-3b.png)
+![installation](activity-9a/documentation/activity-9a-photo1.jpg)
+![serial-monitor](activity-9a/documentation/activity-9a-photo2.jpg)
+![arduino-setup](activity-9a/documentation/activity-9a-photo3.jpg)
+![video-demo](activity-9a/documentation/activity-9a-video.mp4)
 
 ---
