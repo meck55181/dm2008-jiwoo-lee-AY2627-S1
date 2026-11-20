@@ -23,8 +23,8 @@ Warning Shaker turns distance sensor readings from an Arduino into a visual warn
 ### 🧩 Something I Found Interesting
 
 Generating random position offsets every frame creates the shaking effect.
-     // let xOffset = random(-shakeAmount, shakeAmount);
-     // let yOffset = random(-shakeAmount, shakeAmount);
+     `let xOffset = random(-shakeAmount, shakeAmount);`
+     `let yOffset = random(-shakeAmount, shakeAmount);x`
 
 ### 🔗 References
 Shaking Object Code - p5js (https://editor.p5js.org/luisa_NYU/sketches/QEM1tnYXE)
